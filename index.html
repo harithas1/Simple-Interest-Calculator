@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Interest Calculator</title>
+    <style>
+        body{
+            background-color: rgb(230, 230, 230);
+        }
+        #relative{
+            position: relative;
+            background-color: white;
+            box-shadow: 0 0 15px grey;
+            height: auto;
+            width: 10cm;
+            border: none;
+            margin-top: 10%;
+            margin-left: 35%;
+            border-radius: 10px;
+            padding-top: 10px;
+        }
+
+        h2{
+            color: rgb(35, 121, 202);
+            font-size: 1.8rem;
+            padding-left: 20px;
+            padding-top: 10px;
+        }
+
+        label{
+            padding-left: 25%;
+            font-weight: bold;
+        }
+
+        input{
+            width: 70%;
+            margin-left: 13%;
+            margin-top: 5px;
+            margin-bottom: 12px;
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid lightgray;
+        }
+
+        button{
+            width: 75%;
+            margin-left: 13%;
+            margin-top: 15px;
+            margin-bottom: 35px;
+            padding: 10px;
+            background-color: rgb(33, 142, 245);
+            color: white;
+            font-weight: bold;
+            border: none;
+            font-size: 1rem;
+            border-radius: 10px;
+        }
+
+        button:hover{
+            background-color: rgb(69, 157, 239);
+            cursor: pointer;
+        }
+
+
+        #output{
+            font-size: 1.2rem;
+            color: rgb(73, 72, 72);
+            text-align: center;
+            padding-top: 10px;
+            padding-left: 1cm;
+            padding-right: 1cm;
+            color: red;
+            padding-bottom: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="relative">
+        <h2>Simple Interest Calculator</h2>
+
+        <label for="principalAmount">Principal Amount($): </label><br>
+        <input type="number" id="principalAmount"><br>
+
+        <label for="interestRate">Annual Interest Rate(%):</label><br>
+        <input type="number" name="interestRate" id="interestRate"><br>
+
+        <label for="noOfYears">Number of Years:</label><br>
+        <input type="number" name="noOfYears" id="noOfYears"><br>
+        <button id="calculate">Calculate</button>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

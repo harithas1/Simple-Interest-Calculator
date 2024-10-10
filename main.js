@@ -9,18 +9,31 @@ const noOfYears = document.getElementById("noOfYears")
 const total = document.getElementById("calculate")
 
 
-document.getElementById("calculate").addEventListener("click",function(){
-    if(!principalAmount.value||!interestRate.value||!noOfYears.value){
-        alert("Please enter all the required fields!")
-        return;
-    }else {
-        simpleInterest=(principalAmount.value*interestRate.value*noOfYears.value)/100
-    output.textContent=`After ${noOfYears.value} years investment will be worth $${parseInt(principalAmount.value)+parseInt(simpleInterest)}.00 with simple interest.`
+
+
+
+
+
+total.addEventListener("click", function(){
+    const principalValue = parseFloat(principalAmount.value)
+    const interestValue = parseFloat(interestRate.value)
+    const yearsValue = parseFloat(noOfYears.value)
+
+    if(isNaN(principalValue) || isNaN(interestValue) || isNaN(yearsValue) || principalValue < 0 || interestValue < 0 || yearsValue < 0){
+        output.innerText = "Please enter valid positive numbers for all the fields."
+        output.style.color= "red"
+    }else{
+        output.innerText = "";
+
+        let simpleInterest = principalValue * interestValue * yearsValue / 100
+        let totalAmount = principalValue + simpleInterest
+        output.innerText = `For a principal amount of ₹${principalValue.toFixed(
+          2
+        )}, at an interest rate of ${interestValue}% over ${yearsValue} years, the total amount will be ₹${totalAmount.toFixed(
+          2
+        )}. This includes ₹${simpleInterest.toFixed(2)} in interest.`;
+        output.style.color= "green"
     }
+
 })
-
-
-
-
-
 
